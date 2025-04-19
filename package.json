@@ -1,8 +1,9 @@
 {
-	"name": "sparrowstack",
-	"description": "Monorepo for SparrowStack",
+	"name": "ai-agent-app-starter-template",
+	"description": "Starter Template for AI Agent Apps",
 	"packageManager": "bun@1.2.2",
 	"workspaces": [
+		"apps/*",
 		"packages/*"
 	],
 	"scripts": {
