@@ -25,7 +25,7 @@
       },
     },
     "apps/web": {
-      "name": "tanstack-start-example-basic",
+      "name": "@ai-agent-app-starter-template/web",
       "dependencies": {
         "@radix-ui/react-slot": "^1.2.0",
         "@tailwindcss/postcss": "^4.1.4",
@@ -66,6 +66,8 @@
   },
   "packages": {
     "@ai-agent-app-starter-template/graph-db": ["@ai-agent-app-starter-template/graph-db@workspace:packages/graph-db"],
+
+    "@ai-agent-app-starter-template/web": ["@ai-agent-app-starter-template/web@workspace:apps/web"],
 
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
 
@@ -1832,8 +1834,6 @@
     "tailwindcss": ["tailwindcss@4.1.4", "", {}, "sha512-1ZIUqtPITFbv/DxRmDr5/agPqJwF69d24m9qmM1939TJehgY539CtzeZRjbLt5G6fSy/7YqqYsfvoTEw9xUI2A=="],
 
     "tailwindcss-animate": ["tailwindcss-animate@1.0.7", "", { "peerDependencies": { "tailwindcss": ">=3.0.0 || insiders" } }, "sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA=="],
-
-    "tanstack-start-example-basic": ["tanstack-start-example-basic@workspace:apps/web"],
 
     "tapable": ["tapable@2.2.1", "", {}, "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="],
 
