@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
+import { XIcon } from 'lucide-react';
 import { Button } from '~/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '~/components/ui/sheet';
 
@@ -9,7 +10,11 @@ export const MainMobileNavigation = () => {
 	return (
 		<Sheet open={isOpen} onOpenChange={setIsOpen}>
 			<SheetTrigger asChild className="md:hidden">
-				<Button variant="ghost" size="icon" className="h-8 w-8">
+				<Button
+					variant="ghost"
+					size="icon"
+					className="h-8 w-8 cursor-pointer"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="20"
@@ -28,59 +33,67 @@ export const MainMobileNavigation = () => {
 					<span className="sr-only">Toggle menu</span>
 				</Button>
 			</SheetTrigger>
-			<SheetContent
-				side="left"
-				className="w-[80%] sm:w-[385px] pt-12 px-6"
-			>
-				<Link to="/" className="flex items-center gap-2 mb-8">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						className="h-5 w-5 text-primary"
+			<SheetContent side="left" className="w-full sm:w-full p-0">
+				<div className="flex items-center justify-between border-b py-3 px-4 relative">
+					<Link to="/" className="flex items-center gap-2">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							className="h-5 w-5 text-primary"
+						>
+							<path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+						</svg>
+						<span className="text-base font-semibold">
+							Agent Starter
+						</span>
+					</Link>
+					<Button
+						variant="ghost"
+						size="icon"
+						className="h-8 w-8 cursor-pointer opacity-70 hover:opacity-100"
+						onClick={() => setIsOpen(false)}
 					>
-						<path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-					</svg>
-					<span className="text-base font-semibold">
-						Agent Starter
-					</span>
-				</Link>
-				<nav className="flex flex-col gap-5">
+						<XIcon className="h-4 w-4" />
+						<span className="sr-only">Close</span>
+					</Button>
+				</div>
+				<nav className="flex flex-col px-4 pb-3">
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium px-4 hover:text-foreground"
+						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Features
 					</Link>
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium px-4 hover:text-foreground"
+						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Pricing
 					</Link>
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium px-4 hover:text-foreground"
+						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Resources
 					</Link>
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium px-4 hover:text-foreground"
+						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Help
 					</Link>
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium px-4 hover:text-foreground"
+						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Contact
@@ -88,13 +101,13 @@ export const MainMobileNavigation = () => {
 					<div className="flex flex-col gap-3 mt-4">
 						<Button
 							variant="outline"
-							className="w-full justify-start text-xs font-medium h-9 px-6"
+							className="w-full justify-center text-xs font-medium h-9 px-6 text-primary border-primary cursor-pointer"
 							onClick={() => setIsOpen(false)}
 						>
 							Log In
 						</Button>
 						<Button
-							className="w-full justify-start text-xs font-medium h-9 px-6"
+							className="w-full justify-center text-xs font-medium h-9 px-6 cursor-pointer"
 							onClick={() => setIsOpen(false)}
 						>
 							Sign Up

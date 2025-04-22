@@ -32,16 +32,10 @@ export const MainNavigation = () => {
 								Features
 							</Link>
 							<Link to="/" className="hover:text-foreground">
-								Pricing
+								Docs
 							</Link>
 							<Link to="/" className="hover:text-foreground">
-								Resources
-							</Link>
-							<Link to="/" className="hover:text-foreground">
-								Help
-							</Link>
-							<Link to="/" className="hover:text-foreground">
-								Contact
+								Demo
 							</Link>
 						</div>
 					</nav>
@@ -50,13 +44,16 @@ export const MainNavigation = () => {
 				{/* Auth Buttons - Desktop */}
 				<div className="hidden md:flex items-center gap-3">
 					<Button
-						variant="outline"
 						size="sm"
-						className="h-8 px-3 rounded-md text-xs"
+						variant="outline"
+						className="h-8 px-3 rounded-md text-xs text-primary border-primary cursor-pointer"
 					>
 						Log In
 					</Button>
-					<Button size="sm" className="h-8 px-3 rounded-md text-xs">
+					<Button
+						size="sm"
+						className="h-8 px-3 rounded-md text-xs cursor-pointer"
+					>
 						Sign Up
 					</Button>
 				</div>

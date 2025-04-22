@@ -7,7 +7,7 @@ const Home = () => {
 			{/* Main content */}
 			<div className="max-w-5xl mx-auto flex-1 grid md:grid-cols-2 gap-8 px-4 py-12">
 				{/* Left side - Hero */}
-				<div className="flex flex-col justify-center space-y-6">
+				<div className="flex flex-col justify-start md:justify-center md:pt-0 pt-8 space-y-6">
 					<div className="inline-flex px-3 py-1 rounded-full bg-primary/10 text-primary text-sm w-fit">
 						AI Agent Starter Template
 					</div>
@@ -19,23 +19,9 @@ const Home = () => {
 						this starter template.
 					</p>
 					<div className="pt-4">
-						<Button size="lg" className="px-8">
+						<Button size="lg" className="px-8 cursor-pointer">
 							Get started
 						</Button>
-					</div>
-
-					{/* Graph illustration (simplified) */}
-					<div className="h-12 flex items-end gap-1 mt-8 opacity-30">
-						{[
-							1, 2, 3, 2, 4, 3, 5, 2, 3, 4, 2, 3, 4, 5, 3, 4, 5,
-							6, 4, 3,
-						].map((height, i) => (
-							<div
-								key={i}
-								className="bg-primary/70 w-2 rounded-t"
-								style={{ height: `${height * 8}px` }}
-							></div>
-						))}
 					</div>
 				</div>
 
@@ -92,7 +78,7 @@ const Home = () => {
 									/>
 									<Button
 										size="icon"
-										className="absolute right-1 top-1 h-7 w-7 rounded-full"
+										className="absolute right-1 top-1 h-7 w-7 rounded-full cursor-pointer"
 									>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
