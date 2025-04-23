@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Input } from '~/components/ui/input';
 import { useForm } from '@tanstack/react-form';
 import { Button } from '~/components/ui/button';
-import { Checkbox } from '~/components/ui/checkbox';
 import { Separator } from '~/components/ui/separator';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
@@ -19,11 +18,10 @@ const SignUpPage = () => {
 
 	const form = useForm({
 		defaultValues: {
-			fullName: '',
+			// fullName: '',
 			email: '',
 			password: '',
-			confirmPassword: '',
-			termsAccepted: false,
+			// confirmPassword: '',
 		},
 		onSubmit: async ({ value }) => {
 			// Clear any previous errors
@@ -67,52 +65,6 @@ const SignUpPage = () => {
 						}}
 						className="space-y-5"
 					>
-						{/* Full Name Field */}
-						<div className="space-y-2">
-							<form.Field
-								name="fullName"
-								validators={{
-									onChange: ({ value }) =>
-										!value
-											? 'Full name is required'
-											: value.length < 2
-												? 'Full name must be at least 2 characters'
-												: undefined,
-								}}
-							>
-								{(field) => (
-									<>
-										<label
-											htmlFor={field.name}
-											className="text-sm font-medium leading-none"
-										>
-											Full Name
-										</label>
-										<Input
-											id={field.name}
-											name={field.name}
-											placeholder="John Doe"
-											value={field.state.value}
-											onChange={(e) =>
-												field.handleChange(
-													e.target.value,
-												)
-											}
-											onBlur={field.handleBlur}
-											className={
-												field.state.meta.errors.length
-													? 'border-destructive'
-													: ''
-											}
-										/>
-										<FieldError
-											error={field.state.meta.errors[0]}
-										/>
-									</>
-								)}
-							</form.Field>
-						</div>
-
 						{/* Email Field */}
 						<div className="space-y-2">
 							<form.Field
@@ -205,16 +157,13 @@ const SignUpPage = () => {
 										<FieldError
 											error={field.state.meta.errors[0]}
 										/>
-										<p className="text-xs text-muted-foreground mt-1">
-											Must be at least 8 characters
-										</p>
 									</>
 								)}
 							</form.Field>
 						</div>
 
 						{/* Confirm Password Field */}
-						<div className="space-y-2">
+						{/* <div className="space-y-2">
 							<form.Field
 								name="confirmPassword"
 								validators={{
@@ -264,57 +213,7 @@ const SignUpPage = () => {
 									</>
 								)}
 							</form.Field>
-						</div>
-
-						{/* Terms & Conditions Checkbox */}
-						<form.Field
-							name="termsAccepted"
-							validators={{
-								onChange: ({ value }) =>
-									!value
-										? 'You must accept the terms and conditions'
-										: undefined,
-							}}
-						>
-							{(field) => (
-								<div className="space-y-2">
-									<div className="flex items-center space-x-2">
-										<Checkbox
-											id={field.name}
-											name={field.name}
-											checked={field.state.value}
-											onCheckedChange={(checked) => {
-												field.handleChange(
-													Boolean(checked),
-												);
-											}}
-										/>
-										<label
-											htmlFor={field.name}
-											className={`text-sm ${field.state.meta.errors.length ? 'text-destructive' : ''}`}
-										>
-											I agree to the{' '}
-											<Link
-												to="/"
-												className="underline text-primary"
-											>
-												Terms of Service
-											</Link>{' '}
-											and{' '}
-											<Link
-												to="/"
-												className="underline text-primary"
-											>
-												Privacy Policy
-											</Link>
-										</label>
-									</div>
-									<FieldError
-										error={field.state.meta.errors[0]}
-									/>
-								</div>
-							)}
-						</form.Field>
+						</div> */}
 
 						{/* Display form-wide submission error */}
 						{submissionError && (
@@ -322,6 +221,18 @@ const SignUpPage = () => {
 								{submissionError}
 							</div>
 						)}
+
+						{/* Terms & Conditions Text */}
+						{/* <div className="text-sm text-center">
+							By signing up, I agree to the{' '}
+							<Link to="/" className="underline text-primary">
+								Terms of Service
+							</Link>{' '}
+							and{' '}
+							<Link to="/" className="underline text-primary">
+								Privacy Policy
+							</Link>
+						</div> */}
 
 						{/* Submit Button */}
 						<form.Subscribe
@@ -351,33 +262,12 @@ const SignUpPage = () => {
 							</div>
 							<div className="relative flex justify-center text-xs uppercase">
 								<span className="bg-background px-2 text-muted-foreground">
-									Or continue with
+									or sign up with
 								</span>
 							</div>
 						</div>
 
-						<div className="mt-4 grid grid-cols-2 gap-3">
-							<Button
-								variant="outline"
-								type="button"
-								className="w-full"
-							>
-								<svg
-									className="mr-2"
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="2"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								>
-									<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-								</svg>
-								Facebook
-							</Button>
+						<div className="mt-4 grid grid-cols-1 gap-3">
 							<Button
 								variant="outline"
 								type="button"
