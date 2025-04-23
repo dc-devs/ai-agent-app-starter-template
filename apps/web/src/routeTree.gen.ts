@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SignUpImport } from './routes/signUp'
 import { Route as RedirectImport } from './routes/redirect'
 import { Route as DeferredImport } from './routes/deferred'
 import { Route as PathlessLayoutImport } from './routes/_pathlessLayout'
@@ -27,6 +28,12 @@ import { Route as PathlessLayoutNestedLayoutRouteBImport } from './routes/_pathl
 import { Route as PathlessLayoutNestedLayoutRouteAImport } from './routes/_pathlessLayout/_nested-layout/route-a'
 
 // Create/Update Routes
+
+const SignUpRoute = SignUpImport.update({
+  id: '/signUp',
+  path: '/signUp',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const RedirectRoute = RedirectImport.update({
   id: '/redirect',
@@ -160,6 +167,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RedirectImport
       parentRoute: typeof rootRoute
     }
+    '/signUp': {
+      id: '/signUp'
+      path: '/signUp'
+      fullPath: '/signUp'
+      preLoaderRoute: typeof SignUpImport
+      parentRoute: typeof rootRoute
+    }
     '/_pathlessLayout/_nested-layout': {
       id: '/_pathlessLayout/_nested-layout'
       path: ''
@@ -286,6 +300,7 @@ export interface FileRoutesByFullPath {
   '': typeof PathlessLayoutNestedLayoutRouteWithChildren
   '/deferred': typeof DeferredRoute
   '/redirect': typeof RedirectRoute
+  '/signUp': typeof SignUpRoute
   '/posts/$postId': typeof PostsPostIdRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/posts/': typeof PostsIndexRoute
@@ -300,6 +315,7 @@ export interface FileRoutesByTo {
   '': typeof PathlessLayoutNestedLayoutRouteWithChildren
   '/deferred': typeof DeferredRoute
   '/redirect': typeof RedirectRoute
+  '/signUp': typeof SignUpRoute
   '/posts/$postId': typeof PostsPostIdRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/posts': typeof PostsIndexRoute
@@ -317,6 +333,7 @@ export interface FileRoutesById {
   '/_pathlessLayout': typeof PathlessLayoutRouteWithChildren
   '/deferred': typeof DeferredRoute
   '/redirect': typeof RedirectRoute
+  '/signUp': typeof SignUpRoute
   '/_pathlessLayout/_nested-layout': typeof PathlessLayoutNestedLayoutRouteWithChildren
   '/posts/$postId': typeof PostsPostIdRoute
   '/users/$userId': typeof UsersUserIdRoute
@@ -336,6 +353,7 @@ export interface FileRouteTypes {
     | ''
     | '/deferred'
     | '/redirect'
+    | '/signUp'
     | '/posts/$postId'
     | '/users/$userId'
     | '/posts/'
@@ -349,6 +367,7 @@ export interface FileRouteTypes {
     | ''
     | '/deferred'
     | '/redirect'
+    | '/signUp'
     | '/posts/$postId'
     | '/users/$userId'
     | '/posts'
@@ -364,6 +383,7 @@ export interface FileRouteTypes {
     | '/_pathlessLayout'
     | '/deferred'
     | '/redirect'
+    | '/signUp'
     | '/_pathlessLayout/_nested-layout'
     | '/posts/$postId'
     | '/users/$userId'
@@ -382,6 +402,7 @@ export interface RootRouteChildren {
   PathlessLayoutRoute: typeof PathlessLayoutRouteWithChildren
   DeferredRoute: typeof DeferredRoute
   RedirectRoute: typeof RedirectRoute
+  SignUpRoute: typeof SignUpRoute
   PostsPostIdDeepRoute: typeof PostsPostIdDeepRoute
 }
 
@@ -392,6 +413,7 @@ const rootRouteChildren: RootRouteChildren = {
   PathlessLayoutRoute: PathlessLayoutRouteWithChildren,
   DeferredRoute: DeferredRoute,
   RedirectRoute: RedirectRoute,
+  SignUpRoute: SignUpRoute,
   PostsPostIdDeepRoute: PostsPostIdDeepRoute,
 }
 
@@ -411,6 +433,7 @@ export const routeTree = rootRoute
         "/_pathlessLayout",
         "/deferred",
         "/redirect",
+        "/signUp",
         "/posts_/$postId/deep"
       ]
     },
@@ -442,6 +465,9 @@ export const routeTree = rootRoute
     },
     "/redirect": {
       "filePath": "redirect.tsx"
+    },
+    "/signUp": {
+      "filePath": "signUp.tsx"
     },
     "/_pathlessLayout/_nested-layout": {
       "filePath": "_pathlessLayout/_nested-layout.tsx",

@@ -50,12 +50,14 @@ export const MainNavigation = () => {
 					>
 						Log In
 					</Button>
-					<Button
-						size="sm"
-						className="h-8 px-3 rounded-md text-xs cursor-pointer"
-					>
-						Sign Up
-					</Button>
+					<Link to="/signUp">
+						<Button
+							size="sm"
+							className="h-8 px-3 rounded-md text-xs cursor-pointer"
+						>
+							Sign Up
+						</Button>
+					</Link>
 				</div>
 
 				<MainMobileNavigation />

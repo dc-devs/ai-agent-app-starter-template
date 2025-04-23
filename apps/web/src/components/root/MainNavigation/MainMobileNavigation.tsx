@@ -33,7 +33,11 @@ export const MainMobileNavigation = () => {
 					<span className="sr-only">Toggle menu</span>
 				</Button>
 			</SheetTrigger>
-			<SheetContent side="left" className="w-full sm:w-full p-0">
+			<SheetContent
+				side="left"
+				className="w-full sm:w-full p-0"
+				closeButton={false}
+			>
 				<div className="flex items-center justify-between border-b py-3 px-4 relative">
 					<Link to="/" className="flex items-center gap-2">
 						<svg
@@ -75,28 +79,14 @@ export const MainMobileNavigation = () => {
 						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
-						Pricing
+						Docs
 					</Link>
 					<Link
 						to="/"
 						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
-						Resources
-					</Link>
-					<Link
-						to="/"
-						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
-						onClick={() => setIsOpen(false)}
-					>
-						Help
-					</Link>
-					<Link
-						to="/"
-						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
-						onClick={() => setIsOpen(false)}
-					>
-						Contact
+						Demo
 					</Link>
 					<div className="flex flex-col gap-3 mt-4">
 						<Button
@@ -106,12 +96,14 @@ export const MainMobileNavigation = () => {
 						>
 							Log In
 						</Button>
-						<Button
-							className="w-full justify-center text-xs font-medium h-9 px-6 cursor-pointer"
-							onClick={() => setIsOpen(false)}
-						>
-							Sign Up
-						</Button>
+						<Link to="/signUp">
+							<Button
+								className="w-full justify-center text-xs font-medium h-9 px-6 cursor-pointer"
+								onClick={() => setIsOpen(false)}
+							>
+								Sign Up
+							</Button>
+						</Link>
 					</div>
 				</nav>
 			</SheetContent>

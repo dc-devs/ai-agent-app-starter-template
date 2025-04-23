@@ -1,5 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { Button } from '~/components/ui/button';
+import { createFileRoute } from '@tanstack/react-router';
 
 const Home = () => {
 	return (
