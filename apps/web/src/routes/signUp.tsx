@@ -1,18 +1,18 @@
 import { useState } from 'react';
-import { createFileRoute, Link } from '@tanstack/react-router';
+import { Input } from '~/components/ui/input';
 import { useForm } from '@tanstack/react-form';
 import { Button } from '~/components/ui/button';
-import { Input } from '~/components/ui/input';
 import { Checkbox } from '~/components/ui/checkbox';
 import { Separator } from '~/components/ui/separator';
+import { createFileRoute, Link } from '@tanstack/react-router';
 
 // Helper component to display field errors
-function FieldError({ error }: { error?: string }) {
+const FieldError = ({ error }: { error?: string }) => {
 	if (!error) return null;
 	return (
 		<div className="text-sm font-medium text-destructive mt-1">{error}</div>
 	);
-}
+};
 
 const SignUpPage = () => {
 	const [submissionError, setSubmissionError] = useState<string | null>(null);
@@ -283,9 +283,9 @@ const SignUpPage = () => {
 											id={field.name}
 											name={field.name}
 											checked={field.state.value}
-											onChange={(e) => {
+											onCheckedChange={(checked) => {
 												field.handleChange(
-													e.target.checked,
+													Boolean(checked),
 												);
 											}}
 										/>
@@ -329,7 +329,8 @@ const SignUpPage = () => {
 								state.canSubmit,
 								state.isSubmitting,
 							]}
-							children={([canSubmit, isSubmitting]) => (
+						>
+							{([canSubmit, isSubmitting]) => (
 								<Button
 									type="submit"
 									className="w-full mt-6"
@@ -340,7 +341,7 @@ const SignUpPage = () => {
 										: 'Create Account'}
 								</Button>
 							)}
-						/>
+						</form.Subscribe>
 					</form>
 
 					<div className="mt-6">
