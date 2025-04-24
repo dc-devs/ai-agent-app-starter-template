@@ -5,7 +5,7 @@ const Home = () => {
 	return (
 		<div className="min-h-screen flex flex-col">
 			{/* Main content */}
-			<div className="max-w-5xl mx-auto flex-1 grid md:grid-cols-2 gap-8 px-4 py-12">
+			<div className="max-w-6xl mx-auto flex-1 grid md:grid-cols-2 gap-8 py-12 px-4">
 				{/* Left side - Hero */}
 				<div className="flex flex-col justify-start md:justify-center md:pt-0 pt-8 space-y-6">
 					<div className="inline-flex px-3 py-1 rounded-full bg-primary/10 text-primary text-sm w-fit">

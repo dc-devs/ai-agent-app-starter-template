@@ -52,7 +52,7 @@ export const MainMobileNavigation = () => {
 						>
 							<path d="M22 12h-4l-3 9L9 3l-3 9H2" />
 						</svg>
-						<span className="text-base font-semibold">
+						<span className="text-lg font-semibold">
 							Agent Starter
 						</span>
 					</Link>
@@ -69,21 +69,21 @@ export const MainMobileNavigation = () => {
 				<nav className="flex flex-col px-4 pb-3">
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
+						className="text-muted-foreground text-base font-light py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Features
 					</Link>
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
+						className="text-muted-foreground text-base font-light py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Docs
 					</Link>
 					<Link
 						to="/"
-						className="text-muted-foreground text-xs font-medium py-2 hover:text-foreground"
+						className="text-muted-foreground text-base font-light py-2 hover:text-foreground"
 						onClick={() => setIsOpen(false)}
 					>
 						Demo
@@ -91,14 +91,14 @@ export const MainMobileNavigation = () => {
 					<div className="flex flex-col gap-3 mt-4">
 						<Button
 							variant="outline"
-							className="w-full justify-center text-xs font-medium h-9 px-6 text-primary border-primary cursor-pointer"
+							className="w-full justify-center text-base font-medium h-9 px-6 text-primary border-primary cursor-pointer"
 							onClick={() => setIsOpen(false)}
 						>
 							Log In
 						</Button>
 						<Link to="/signUp">
 							<Button
-								className="w-full justify-center text-xs font-medium h-9 px-6 cursor-pointer"
+								className="w-full justify-center text-base font-medium h-9 px-6 cursor-pointer"
 								onClick={() => setIsOpen(false)}
 							>
 								Sign Up
