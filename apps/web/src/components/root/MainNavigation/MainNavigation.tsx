@@ -43,13 +43,15 @@ export const MainNavigation = () => {
 
 				{/* Auth Buttons - Desktop */}
 				<div className="hidden md:flex items-center gap-3">
-					<Button
-						size="sm"
-						variant="outline"
-						className="h-9 px-4 rounded-md text-base text-primary border-primary cursor-pointer"
-					>
-						Log In
-					</Button>
+					<Link to="/login">
+						<Button
+							size="sm"
+							variant="outline"
+							className="h-9 px-4 rounded-md text-base text-primary border-primary cursor-pointer"
+						>
+							Log In
+						</Button>
+					</Link>
 					<Link to="/signUp">
 						<Button
 							size="sm"

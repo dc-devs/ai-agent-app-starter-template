@@ -89,13 +89,15 @@ export const MainMobileNavigation = () => {
 						Demo
 					</Link>
 					<div className="flex flex-col gap-3 mt-4">
-						<Button
-							variant="outline"
-							className="w-full justify-center text-base font-medium h-9 px-6 text-primary border-primary cursor-pointer"
-							onClick={() => setIsOpen(false)}
-						>
-							Log In
-						</Button>
+						<Link to="/login">
+							<Button
+								variant="outline"
+								className="w-full justify-center text-base font-medium h-9 px-6 text-primary border-primary cursor-pointer"
+								onClick={() => setIsOpen(false)}
+							>
+								Log In
+							</Button>
+						</Link>
 						<Link to="/signUp">
 							<Button
 								className="w-full justify-center text-base font-medium h-9 px-6 cursor-pointer"

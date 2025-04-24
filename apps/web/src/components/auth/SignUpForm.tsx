@@ -146,7 +146,7 @@ export const SignUpForm = () => {
 			<div className="mt-6 text-center text-sm">
 				Already have an account?{' '}
 				<Link
-					to="/"
+					to="/login"
 					className="font-medium text-primary hover:underline"
 				>
 					Log in

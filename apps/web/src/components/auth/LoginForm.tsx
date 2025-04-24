@@ -10,7 +10,7 @@ import {
 	PasswordField,
 } from './AuthFormContext';
 
-export const LoginForm = () => {
+export const LogInForm = () => {
 	const [submissionError, setSubmissionError] = useState<string | null>(null);
 
 	const form = useAuthForm({
@@ -23,7 +23,7 @@ export const LoginForm = () => {
 			setSubmissionError(null);
 
 			try {
-				// Here you would typically make an API call to login the user
+				// Here you would typically make an API call to authenticate the user
 				console.log('Login form submitted:', value);
 				// Simulate API call success
 				await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -31,9 +31,9 @@ export const LoginForm = () => {
 				// Optional: redirect the user after successful login
 				// navigate('/dashboard');
 			} catch (error) {
-				console.error('Error logging in:', error);
+				console.error('Error submitting form:', error);
 				setSubmissionError(
-					'Invalid email or password. Please try again.',
+					'Login failed. Please check your credentials and try again.',
 				);
 			}
 		},
@@ -73,16 +73,6 @@ export const LoginForm = () => {
 					</form.Field>
 				</div>
 
-				{/* Forgot Password Link */}
-				<div className="flex justify-end">
-					<Link
-						to="/"
-						className="text-sm font-medium text-primary hover:underline"
-					>
-						Forgot password?
-					</Link>
-				</div>
-
 				{/* Display form-wide submission error */}
 				{submissionError && (
 					<div className="text-sm font-medium text-destructive">
@@ -97,10 +87,10 @@ export const LoginForm = () => {
 					{([canSubmit, isSubmitting]) => (
 						<Button
 							type="submit"
-							className="w-full mt-6"
+							className="w-full mt-6 cursor-pointer"
 							disabled={!canSubmit || isSubmitting}
 						>
-							{isSubmitting ? 'Logging in...' : 'Log in'}
+							{isSubmitting ? 'Logging in...' : 'Log In'}
 						</Button>
 					)}
 				</form.Subscribe>
@@ -121,7 +111,7 @@ export const LoginForm = () => {
 				<div className="mt-6 mb-4 grid grid-cols-1 gap-3">
 					<button
 						type="button"
-						className="flex w-full items-center justify-center gap-2 rounded-md border py-3 px-3 text-sm shadow-sm transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+						className="flex w-full items-center justify-center gap-2 rounded-md border py-3 px-3 text-sm shadow-sm transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
 					>
 						<svg
 							className="h-4 w-4"
