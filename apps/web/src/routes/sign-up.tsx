@@ -20,6 +20,6 @@ const SignUpPage = () => {
 	);
 };
 
-export const Route = createFileRoute('/signUp')({
+export const Route = createFileRoute('/sign-up')({
 	component: SignUpPage,
 });
